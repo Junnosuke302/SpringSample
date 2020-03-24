@@ -100,8 +100,9 @@ public class HomeController {
 	
 	@PostMapping(value = "/userDetail", params = "update")
 	public String postUserDetailUpdate(@ModelAttribute @Validated(GroupOrder.class)SignupForm form, BindingResult bindingResult, Model model) {
-		if (bindingResult.hasErrors())
+		if (bindingResult.hasErrors()) {
 			return getUserDetail(form, model, form.getUserId());
+		}
 		
 		System.out.println("更新ボタンの処理");
 		
@@ -139,7 +140,7 @@ public class HomeController {
 		else
 			model.addAttribute("result", "削除失敗");
 		
-		return getUserList(model);
+		return getHome(model);
 	}
 	
 	@GetMapping("/logout")
