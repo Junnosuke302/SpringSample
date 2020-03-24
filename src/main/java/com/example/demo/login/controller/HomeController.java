@@ -125,7 +125,7 @@ public class HomeController {
 			model.addAttribute("result", "更新失敗(トランザクションテスト)");
 		}
 		
-		return getUserList(model);
+		return getHome(model);
 	}
 	
 	@PostMapping(value = "/userDetail", params = "delete")
