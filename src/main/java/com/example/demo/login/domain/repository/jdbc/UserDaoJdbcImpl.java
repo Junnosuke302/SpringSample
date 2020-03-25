@@ -18,7 +18,6 @@ public class UserDaoJdbcImpl implements UserDao {
 	@Autowired
 	PasswordEncoder passwordEncoder;
 	
-	//カウント queryForObject
 	@Override
 	public int count() throws DataAccessException {
 		int count = jdbc.queryForObject("SELECT COUNT(*) FROM m_user", Integer.class);
@@ -26,7 +25,6 @@ public class UserDaoJdbcImpl implements UserDao {
 		return count;
 	}
 	
-	//登録 update
 	@Override
 	public int insertOne(User user) throws DataAccessException {
 		
@@ -54,7 +52,6 @@ public class UserDaoJdbcImpl implements UserDao {
 		return rowNumber;
 	}
 	
-	//１件表示(詳細表示) queryForMap
 	@Override
 	public User selectOne(String userId) throws DataAccessException {
 		Map<String, Object> map = jdbc.queryForMap("SELECT * FROM m_user WHERE user_id = ?", userId);
@@ -72,7 +69,6 @@ public class UserDaoJdbcImpl implements UserDao {
 		return user;
 	}
 	
-	//全件表示 queryForList
 	@Override
 	public List<User> selectMany() throws DataAccessException {
 		List<Map<String, Object>> getList = jdbc.queryForList("SELECT * FROM m_user");
@@ -96,7 +92,6 @@ public class UserDaoJdbcImpl implements UserDao {
 		return userList;
 	}
 	
-	//１件更新 update
 	@Override
 	public int updateOne(User user) throws DataAccessException {
 		
@@ -108,7 +103,8 @@ public class UserDaoJdbcImpl implements UserDao {
 				+ " birthday = ?,"
 				+ " age = ?,"
 				+ " marriage = ?"
-				+ " WHERE user_id = ?";
+				+ " WHERE"
+				+ " user_id = ?";
 		
 		int rowNumber = jdbc.update(sql,
 				password,
@@ -118,14 +114,9 @@ public class UserDaoJdbcImpl implements UserDao {
 				user.isMarriage(),
 				user.getUserId());
 		
-		/*if (rowNumber > 0) {
-			throw new DataAccessException("トランザクションテスト") {};
-		}*/
-		
 		return rowNumber;
 	}
 	
-	//１件削除 update
 	@Override
 	public int deleteOne(String userId) throws DataAccessException {
 		int rowNumber = jdbc.update("DELETE FROM m_user WHERE user_id = ?", userId);
@@ -133,7 +124,6 @@ public class UserDaoJdbcImpl implements UserDao {
 		return rowNumber;
 	}
 	
-	//CSV出力
 	@Override
 	public void userCsvOut() throws DataAccessException {
 		String sql = "SELECT * FROM m_user";

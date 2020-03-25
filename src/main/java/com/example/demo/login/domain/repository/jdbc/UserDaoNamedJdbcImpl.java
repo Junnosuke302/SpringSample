@@ -114,7 +114,7 @@ public class UserDaoNamedJdbcImpl implements UserDao {
 				+ " user_name = :userName,"
 				+ " birthday = :birthday,"
 				+ " age = :age,"
-				+ " marriage = :marriage,"
+				+ " marriage = :marriage"
 				+ " WHERE user_id = :userId";
 		
 		SqlParameterSource params = new MapSqlParameterSource()
