@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.jdbc.core.namedparam.SqlParameterSource;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Repository;
 
 import com.example.demo.login.domain.model.User;
@@ -18,6 +19,9 @@ public class UserDaoNamedJdbcImpl implements UserDao {
 	
 	@Autowired
 	private NamedParameterJdbcTemplate jdbc;
+	
+	@Autowired
+	PasswordEncoder passwordEncoder;
 	
 	@Override
 	public int count() {
@@ -30,6 +34,8 @@ public class UserDaoNamedJdbcImpl implements UserDao {
 	
 	@Override
 	public int insertOne(User user) {
+		String password = passwordEncoder.encode(user.getPassword());
+		
 		String sql = "INSERT INTO m_user(user_id,"
 				+ " password,"
 				+ " user_name,"
@@ -47,7 +53,7 @@ public class UserDaoNamedJdbcImpl implements UserDao {
 		
 		SqlParameterSource params = new MapSqlParameterSource()
 				.addValue("userId", user.getUserId())
-				.addValue("password", user.getPassword())
+				.addValue("password", password)
 				.addValue("userName", user.getUserName())
 				.addValue("birthday", user.getBirthday())
 				.addValue("age", user.getAge())
@@ -108,6 +114,8 @@ public class UserDaoNamedJdbcImpl implements UserDao {
 	
 	@Override
 	public int updateOne(User user) {
+		String password = passwordEncoder.encode(user.getPassword());
+		
 		String sql = "UPDATE m_user"
 				+ " SET"
 				+ " password = :password,"
@@ -119,7 +127,7 @@ public class UserDaoNamedJdbcImpl implements UserDao {
 		
 		SqlParameterSource params = new MapSqlParameterSource()
 				.addValue("userId", user.getUserId())
-				.addValue("password", user.getPassword())
+				.addValue("password", password)
 				.addValue("userName", user.getUserName())
 				.addValue("birthday", user.getBirthday())
 				.addValue("age", user.getAge())
