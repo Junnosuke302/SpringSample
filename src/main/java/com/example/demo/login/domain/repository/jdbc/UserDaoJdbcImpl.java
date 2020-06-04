@@ -31,7 +31,11 @@ public class UserDaoJdbcImpl implements UserDao {
 		String password = passwordEncoder.encode(user.getPassword());
 		
 		String sql = "INSERT INTO m_user("
+<<<<<<< HEAD
 				+ " user_id,"
+=======
+				+ " employee_id,"
+>>>>>>> origin/master
 				+ " password,"
 				+ " user_name,"
 				+ " birthday,"
@@ -41,7 +45,11 @@ public class UserDaoJdbcImpl implements UserDao {
 				+ " VALUES(?, ?, ?, ?, ?, ?, ?)";
 				
 		int rowNumber = jdbc.update(sql,
+<<<<<<< HEAD
 				user.getUserId(),
+=======
+				user.getEmployeeId(),
+>>>>>>> origin/master
 				password,
 				user.getUserName(),
 				user.getBirthday(),
@@ -53,12 +61,21 @@ public class UserDaoJdbcImpl implements UserDao {
 	}
 	
 	@Override
+<<<<<<< HEAD
 	public User selectOne(String userId) throws DataAccessException {
 		Map<String, Object> map = jdbc.queryForMap("SELECT * FROM m_user WHERE user_id = ?", userId);
 		
 		User user = new User();
 		
 		user.setUserId((String)map.get("user_id"));
+=======
+	public User selectOne(String employeeId) throws DataAccessException {
+		Map<String, Object> map = jdbc.queryForMap("SELECT * FROM m_user WHERE employee_id = ?", employeeId);
+		
+		User user = new User();
+		
+		user.setEmployeeId((String)map.get("employee_id"));
+>>>>>>> origin/master
 		user.setPassword((String)map.get("password"));
 		user.setUserName((String)map.get("user_name"));
 		user.setBirthday((Date)map.get("birthday"));
@@ -78,7 +95,11 @@ public class UserDaoJdbcImpl implements UserDao {
 		for (Map<String, Object> map: getList) {
 			User user = new User();
 			
+<<<<<<< HEAD
 			user.setUserId((String)map.get("user_id"));
+=======
+			user.setEmployeeId((String)map.get("employee_id"));
+>>>>>>> origin/master
 			user.setPassword((String)map.get("password"));
 			user.setUserName((String)map.get("user_name"));
 			user.setBirthday((Date)map.get("birthday"));
@@ -104,7 +125,11 @@ public class UserDaoJdbcImpl implements UserDao {
 				+ " age = ?,"
 				+ " marriage = ?"
 				+ " WHERE"
+<<<<<<< HEAD
 				+ " user_id = ?";
+=======
+				+ " employee_id = ?";
+>>>>>>> origin/master
 		
 		int rowNumber = jdbc.update(sql,
 				password,
@@ -112,14 +137,23 @@ public class UserDaoJdbcImpl implements UserDao {
 				user.getBirthday(),
 				user.getAge(),
 				user.isMarriage(),
+<<<<<<< HEAD
 				user.getUserId());
+=======
+				user.getEmployeeId());
+>>>>>>> origin/master
 		
 		return rowNumber;
 	}
 	
 	@Override
+<<<<<<< HEAD
 	public int deleteOne(String userId) throws DataAccessException {
 		int rowNumber = jdbc.update("DELETE FROM m_user WHERE user_id = ?", userId);
+=======
+	public int deleteOne(String employeeId) throws DataAccessException {
+		int rowNumber = jdbc.update("DELETE FROM m_user WHERE employee_id = ?", employeeId);
+>>>>>>> origin/master
 		
 		return rowNumber;
 	}

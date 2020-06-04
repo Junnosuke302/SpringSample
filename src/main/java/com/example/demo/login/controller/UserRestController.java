@@ -2,6 +2,10 @@ package com.example.demo.login.controller;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+<<<<<<< HEAD
+=======
+import org.springframework.beans.factory.annotation.Qualifier;
+>>>>>>> origin/master
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,6 +20,10 @@ import com.example.demo.login.domain.service.RestService;
 public class UserRestController {
 	
 	@Autowired
+<<<<<<< HEAD
+=======
+	@Qualifier("RestServiceMybatisImpl")
+>>>>>>> origin/master
 	RestService service;
 	
 	@GetMapping("/rest/get")
@@ -44,7 +52,11 @@ public class UserRestController {
 	
 	@PutMapping("/rest/update")
 	public String putUserOne(@RequestBody User user) {
+<<<<<<< HEAD
 		boolean result = service.update(user);
+=======
+		boolean result = service.updateOne(user);
+>>>>>>> origin/master
 		
 		String str = "";
 		
@@ -58,7 +70,11 @@ public class UserRestController {
 	
 	@DeleteMapping("/rest/delete/{id:.+}")
 	public String deleteUserOne(@PathVariable("id") String userId) {
+<<<<<<< HEAD
 		boolean result = service.delete(userId);
+=======
+		boolean result = service.deleteOne(userId);
+>>>>>>> origin/master
 		
 		String str = "";
 		
