@@ -10,8 +10,6 @@
 		</div>
 		<div>
 			<label class="text-info" th:text="${result}">結果表示</label>
-<<<<<<< HEAD
-=======
 			<form method="post" th:action="@{'/home'}" onsubmit="return check()">
 				<div th:if="${attendStart && attendLate == false}">
 					<button type="submit" class="btn btn-primary btn-lg" name="start">出勤</button>
@@ -27,7 +25,6 @@
 			<a th:href="@{'/individualAttendList'}">
 				<button class="btn btn-primary btn-lg pull-right">タイムカード確認</button>
 			</a>
->>>>>>> origin/master
 		</div>
 	</div>
 </body>

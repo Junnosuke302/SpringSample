@@ -27,36 +27,21 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	private DataSource dataSource;
 	
 	private static final String USER_SQL = "SELECT"
-<<<<<<< HEAD
-			+ " user_id,"
-=======
 			+ " employee_id,"
->>>>>>> origin/master
 			+ " password,"
 			+ " true"
 			+ " FROM"
 			+ " m_user"
 			+ " WHERE"
-<<<<<<< HEAD
-			+ " user_id = ?";
-	
-	private static final String ROLE_SQL = "SELECT"
-			+ " user_id,"
-=======
 			+ " employee_id = ?";
 	
 	private static final String ROLE_SQL = "SELECT"
 			+ " employee_id,"
->>>>>>> origin/master
 			+ " role"
 			+ " FROM"
 			+ " m_user"
 			+ " WHERE"
-<<<<<<< HEAD
-			+ " user_id = ?";
-=======
 			+ " employee_id = ?";
->>>>>>> origin/master
 	
 	@Override
 	public void configure(WebSecurity web) throws Exception {
@@ -81,11 +66,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 			.loginProcessingUrl("/login") //ログイン処理のパス
 			.loginPage("/login") //ログインページの指定
 			.failureUrl("/login") //ログイン失敗時の遷移先
-<<<<<<< HEAD
-			.usernameParameter("userId") //ログインページのユーザーID
-=======
 			.usernameParameter("employeeId") //ログインページのユーザーID
->>>>>>> origin/master
 			.passwordParameter("password") //ログインページのパスワード
 			.defaultSuccessUrl("/home", true); //ログイン成功後の遷移先
 		

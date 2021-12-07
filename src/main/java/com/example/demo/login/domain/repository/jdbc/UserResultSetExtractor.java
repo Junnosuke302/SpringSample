@@ -18,11 +18,7 @@ public class UserResultSetExtractor  implements ResultSetExtractor<List<User>> {
 		while (rs.next()) {
 			User user = new User();
 			
-<<<<<<< HEAD
-			user.setUserId(rs.getString("user_id"));
-=======
 			user.setEmployeeId(rs.getString("employee_id"));
->>>>>>> origin/master
 			user.setPassword(rs.getString("password"));
 			user.setUserName(rs.getString("user_name"));
 			user.setBirthday(rs.getDate("birthday"));

@@ -148,11 +148,7 @@ public class UserDaoNamedJdbcImpl implements UserDao {
 	
 	@Override
 	public int updateOne(User user) {
-<<<<<<< HEAD
-		String password = passwordEncoder.encode(user.getPassword());
-=======
 		String password = passwordEncode.encode(user.getPassword());
->>>>>>> origin/master
 		
 		String sql = "UPDATE m_user"
 				+ " SET"
@@ -161,17 +157,10 @@ public class UserDaoNamedJdbcImpl implements UserDao {
 				+ " birthday = :birthday,"
 				+ " age = :age,"
 				+ " marriage = :marriage"
-<<<<<<< HEAD
-				+ " WHERE user_id = :userId";
-		
-		SqlParameterSource params = new MapSqlParameterSource()
-				.addValue("userId", user.getUserId())
-=======
 				+ " WHERE employee_id = :employeeId";
 		
 		SqlParameterSource params = new MapSqlParameterSource()
 				.addValue("userId", user.getEmployeeId())
->>>>>>> origin/master
 				.addValue("password", password)
 				.addValue("userName", user.getUserName())
 				.addValue("birthday", user.getBirthday())
@@ -182,19 +171,11 @@ public class UserDaoNamedJdbcImpl implements UserDao {
 	}
 	
 	@Override
-<<<<<<< HEAD
-	public int deleteOne(String userId) {
-		String sql = "DELETE FROM m_user WHERE user_id = :userId";
-		
-		SqlParameterSource params = new MapSqlParameterSource()
-				.addValue("userId", userId);
-=======
 	public int deleteOne(String employeeId) {
 		String sql = "DELETE FROM m_user WHERE employee_id = :employeeId";
 		
 		SqlParameterSource params = new MapSqlParameterSource()
 				.addValue("employeeId", employeeId);
->>>>>>> origin/master
 		
 		int rowNumber = jdbc.update(sql, params);
 		

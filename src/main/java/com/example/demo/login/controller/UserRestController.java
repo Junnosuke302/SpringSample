@@ -52,11 +52,7 @@ public class UserRestController {
 	
 	@PutMapping("/rest/update")
 	public String putUserOne(@RequestBody User user) {
-<<<<<<< HEAD
-		boolean result = service.update(user);
-=======
 		boolean result = service.updateOne(user);
->>>>>>> origin/master
 		
 		String str = "";
 		
@@ -70,11 +66,7 @@ public class UserRestController {
 	
 	@DeleteMapping("/rest/delete/{id:.+}")
 	public String deleteUserOne(@PathVariable("id") String userId) {
-<<<<<<< HEAD
-		boolean result = service.delete(userId);
-=======
 		boolean result = service.deleteOne(userId);
->>>>>>> origin/master
 		
 		String str = "";
 		

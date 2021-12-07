@@ -38,11 +38,7 @@ public class RestServiceJdbcImpl implements RestService {
 	}
 	
 	@Override
-<<<<<<< HEAD
-	public boolean update(User user) {
-=======
 	public boolean updateOne(User user) {
->>>>>>> origin/master
 		int result = dao.updateOne(user);
 		
 		if (result == 0)
@@ -52,11 +48,7 @@ public class RestServiceJdbcImpl implements RestService {
 	}
 	
 	@Override
-<<<<<<< HEAD
-	public boolean delete(String userId) {
-=======
 	public boolean deleteOne(String userId) {
->>>>>>> origin/master
 		int result = dao.deleteOne(userId);
 		
 		if (result == 0)
