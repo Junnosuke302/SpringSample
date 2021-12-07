@@ -11,13 +11,8 @@
 	<h1>Login</h1>
 	<form method="post" th:action="@{/login}">
 		<p th:if="${session['SPRING_SECURITY_LAST_EXCEPTION']} != null" th:text="${session[SPRING_SECURITY_LAST_EXCEPTION].message}" class="text-danger">ログインエラーメッセージ</p>
-<<<<<<< HEAD
 		<label>ユーザーID</label>
 		<input type="text" name="userId"><br>
-=======
-		<label>社員番号</label>
-		<input type="text" name="employeeId"><br>
->>>>>>> origin/master
 		<br>
 		<label>パスワード</label>
 		<input type="password" name="password"><br>

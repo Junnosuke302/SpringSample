@@ -10,10 +10,6 @@
 	<!-- CSS -->
 	<link th:href="@{/css/home.css}" rel="stylesheet">
 	<title>Home</title>
-<<<<<<< HEAD
-=======
-	<script th:src="@{/js/wsCheck.js}"></script>
->>>>>>> origin/master
 </head>
 <body>
 	<nav class="navbar navbar-inverse navbar-fixed-top">
@@ -34,11 +30,7 @@
 						<a th:href="@{'/userDetail/' + ${userName}}">登録情報変更</a>
 					</li>
 					<li role="presentation" sec:authorize="hasRole('ADMIN')">
-<<<<<<< HEAD
 						<a th:href="@{'/userList'}">ユーザー管理<br>(アドミン権限専用)</a>
-=======
-						<a th:href="@{'/attendList'}">ユーザー管理<br>(アドミン権限専用)</a>
->>>>>>> origin/master
 					</li>
 				</ul>
 			</div>

@@ -10,13 +10,7 @@ public interface RestService {
 	
 	public List<User> selectMany();
 	
-<<<<<<< HEAD
 	public boolean update(User user);
 	
 	public boolean delete(String userId);
-=======
-	public boolean updateOne(User user);
-	
-	public boolean deleteOne(String userId);
->>>>>>> origin/master
 }
