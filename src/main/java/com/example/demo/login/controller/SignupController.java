@@ -47,11 +47,7 @@ public class SignupController {
 		 
 		 User user = new User();
 		 
-<<<<<<< HEAD
 		 user.setUserId(form.getUserId());
-=======
-		 user.setEmployeeId(form.getEmployeeId());
->>>>>>> origin/master
 		 user.setPassword(form.getPassword());
 		 user.setUserName(form.getUserName());
 		 user.setBirthday(form.getBirthday());

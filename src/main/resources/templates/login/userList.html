@@ -11,11 +11,7 @@
 		</div>
 		<table class="table table-bordered table-hover table-striped">
 			<tr>
-<<<<<<< HEAD
 				<th class="info col-sm-2">ユーザーID</th>
-=======
-				<th class="info col-sm-2">社員番号</th>
->>>>>>> origin/master
 				<th class="info col-sm-2">ユーザー名</th>
 				<th class="info col-sm-2">誕生日</th>
 				<th class="info col-sm-2">年齢</th>
@@ -23,21 +19,13 @@
 				<th class="info col-sm-2"></th>
 			</tr>
 			<tr th:each="user:${userList}">
-<<<<<<< HEAD
 				<td th:text="${user.userId}"></td>
-=======
-				<td th:text="${user.employeeId}"></td>
->>>>>>> origin/master
 				<td th:text="${user.userName}"></td>
 				<td th:text="${#dates.format(user.birthday,'YYYY/MM/dd')}"></td>
 				<td th:text="${user.age}"></td>
 				<td th:text="${user.marriage} ? '既婚' : '未婚'"></td>
 				<td>
-<<<<<<< HEAD
 					<a class="btn btn-primary" th:href="@{'/userDetail/' + ${user.userId}}">詳細</a>
-=======
-					<a class="btn btn-primary" th:href="@{'/userDetail/' + ${user.employeeId}}">詳細</a>
->>>>>>> origin/master
 				</td>
 			</tr>
 		</table>

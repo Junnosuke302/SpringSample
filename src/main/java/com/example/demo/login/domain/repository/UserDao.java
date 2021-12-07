@@ -9,21 +9,13 @@ public interface UserDao {
 	
 	public int insertOne(User user) throws DataAccessException;
 	
-<<<<<<< HEAD
 	public User selectOne(String userId) throws DataAccessException;
-=======
-	public User selectOne(String employeeId) throws DataAccessException;
->>>>>>> origin/master
 	
 	public List<User> selectMany() throws DataAccessException;
 	
 	public int updateOne(User user) throws DataAccessException;
 	
-<<<<<<< HEAD
 	public int deleteOne(String userId) throws DataAccessException;
-=======
-	public int deleteOne(String employeeId) throws DataAccessException;
->>>>>>> origin/master
 	
 	public void userCsvOut() throws DataAccessException;
 }

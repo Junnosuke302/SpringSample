@@ -2,10 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head>
 	<meta charset="UTF-8">
-<<<<<<< HEAD
 	<title>Insert title here</title>
-=======
->>>>>>> origin/master
 </head>
 <body>
 	<div th:fragment="userDetail_contents">
@@ -17,17 +14,10 @@
 				<form method="post" th:action="@{/userDetail}" th:object="${signupForm}">
 					<table class="table table-bordered tablehover">
 						<tr>
-<<<<<<< HEAD
 							<th class="active col-sm-2">ユーザーID</th>
 							<td class="col-sm-3">
 								<div class="form-group">
 									<input type="text" class="form-control" th:field="*{userId}" readonly="readonly">
-=======
-							<th class="active col-sm-2">社員番号</th>
-							<td class="col-sm-3">
-								<div class="form-group">
-									<input type="text" class="form-control" th:field="*{employeeId}" readonly="readonly">
->>>>>>> origin/master
 								</div>
 							</td>
 						</tr>

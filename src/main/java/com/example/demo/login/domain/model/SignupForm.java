@@ -17,11 +17,7 @@ public class SignupForm {
 	
 	@NotBlank(groups = ValidGroup1.class)
 	@Email(groups = ValidGroup2.class)
-<<<<<<< HEAD
 	private String userId;
-=======
-	private String employeeId;
->>>>>>> origin/master
 	
 	@NotBlank(groups = ValidGroup1.class)
 	@Length(min = 8, max = 16, groups = ValidGroup2.class)

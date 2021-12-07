@@ -21,15 +21,9 @@
 				<tr>
 					<th class="active col-sm-3">ユーザーID</th>
 					<td>
-<<<<<<< HEAD
 						<div class="form-group" th:classappend="${#fields.hasErrors('userId')} ? 'has-error'">
 							<input type="text" class="form-control" th:field="*{userId}">
 							<span class="text-danger" th:if="${#fields.hasErrors('userId')}" th:errors="*{userId}">userId error</span>
-=======
-						<div class="form-group" th:classappend="${#fields.hasErrors('employeeId')} ? 'has-error'">
-							<input type="text" class="form-control" th:field="*{employeeId}">
-							<span class="text-danger" th:if="${#fields.hasErrors('employeeId')}" th:errors="*{employeeId}">employeeId error</span>
->>>>>>> origin/master
 						</div>
 					</td>
 				</tr>
